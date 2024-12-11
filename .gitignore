@@ -1,0 +1,16 @@
+# Node.js dependencies
+/node_modules
+
+# dotenv environment file
+.env
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/

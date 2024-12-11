@@ -1,0 +1,34 @@
+name: Back-End Build and Test
+
+on:
+  push:
+    branches:
+      - prod  # Trigger on pushes to the main branch
+  pull_request:
+    branches:
+      - prod  # Trigger on PRs to the main branch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'  # Set your Node.js version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run backend tests
+      - name: Run tests
+        run: npm test
+
+      # Optionally, you can deploy the backend here (e.g., to Heroku or AWS)
