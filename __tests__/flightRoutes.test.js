@@ -22,7 +22,7 @@ describe('Flight Routes', () => {
     // Mock flight data
     const flight = new Flight({
       airline: 'Airline A',
-      flightNumber: 'E123',
+      flightNumber: 'E1234',
       departureCity: 'New York',
       destinationCity: 'London',
       departureDate: new Date('2024-12-01'),
@@ -45,15 +45,15 @@ describe('Flight Routes', () => {
 
   it('should create a new booking', async () => {
     const bookingData = {
-      name: 'tamir',
-      email: 'dddd',
-      contactNumber: 'ddd',
+      name: 'aviram',
+      email: 'aviram@gmail.com',
+      contactNumber: '0526740366',
       bookingDate: new Date('2024-12-3'),
     };
 
     const response = await request(app).post('/api/flights/bookings').send(bookingData);
     expect(response.status).toBe(201);
-    expect(response.body.name).toBe('tamir');
+    expect(response.body.name).toBe('aviram');
   });
 
   it('should handle booking failures', async () => {
